@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  web:
+    build:
+      context: .
+    container_name: multiple-chain-php
+    ports:
+      - "4040:80"
+    volumes:
+      - ./packages:/var/www/html
+      - ./xdebug:/var/www/html/xdebug

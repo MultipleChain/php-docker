@@ -1,0 +1,15 @@
+[submodule "packages/evm-chains"]
+	path = packages/evm-chains
+	url = https://github.com/MultipleChain/evm-chains-php.git
+[submodule "packages/bitcoin"]
+	path = packages/bitcoin
+	url = https://github.com/MultipleChain/bitcoin-php.git
+[submodule "packages/solana"]
+	path = packages/solana
+	url = https://github.com/MultipleChain/solana-php.git
+[submodule "packages/tron"]
+	path = packages/tron
+	url = https://github.com/MultipleChain/tron-php.git
+[submodule "packages/utils"]
+	path = packages/utils
+	url = https://github.com/MultipleChain/utils-php.git

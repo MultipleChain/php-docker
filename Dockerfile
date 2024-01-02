@@ -25,15 +25,10 @@ COPY ./packages /var/www/html
 
 RUN chown -R www-data:www-data /var/www/html
 
-WORKDIR /var/www/html
-RUN cd evm-chains && composer install --ignore-platform-req=ext-bcmath --ignore-platform-req=ext-gmp
-RUN cd bitcoin && composer install --ignore-platform-req=ext-bcmath --ignore-platform-req=ext-gmp
-RUN cd solana && composer install --ignore-platform-req=ext-bcmath --ignore-platform-req=ext-gmp
-RUN cd tron && composer install --ignore-platform-req=ext-bcmath --ignore-platform-req=ext-gmp --ignore-platform-reqs
-RUN cd utils && composer install --ignore-platform-req=ext-bcmath --ignore-platform-req=ext-gmp 
-
 # Port
 EXPOSE 80
 
-# Run apache
-CMD ["apache2-foreground"]
+COPY entrypoint.sh /usr/local/bin/
+RUN chmod +x /usr/local/bin/entrypoint.sh
+
+ENTRYPOINT ["entrypoint.sh"]

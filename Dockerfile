@@ -28,7 +28,5 @@ RUN chown -R www-data:www-data /var/www/html
 # Port
 EXPOSE 80
 
-COPY entrypoint.sh /usr/local/bin/
-RUN chmod +x /usr/local/bin/entrypoint.sh
-
-ENTRYPOINT ["entrypoint.sh"]
+# Start apache
+CMD ["apache2-foreground"]
